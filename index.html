@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/74209018?v=4">
+  <link rel="stylesheet" href="style.css">
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+
+  <title>Shahe's Warehouse</title>
+  
+</head>
+
+<body class="bg-white dark-mode relative overflow-hidden">
+  <div id="particles-js"></div>
+  
+  <!-- Taskbar -->
+  <nav id="taskbar" class="taskbar text-white">
+    <a href="#" class="home-link">Home</a>
+    <div class="nav-items">
+        <div class="center-with-button">
+            <a href="about.html" class="hover:text-gray-300 transition-colors duration-200">About</a>
+            <a href="projects.html" class="hover:text-gray-300 transition-colors duration-200">Projects</a>
+            <a href="blog.html" class="hover:text-gray-300 transition-colors duration-200">Blogs</a>
+            <a href="contact.html" class="hover:text-gray-300 transition-colors duration-200">Contact</a>
+        </div>
+        <button id="dark-mode-toggle" class="ml-4 p-2 text-white rounded shadow-md">☀️</button>
+    </div>
+  </nav>
+  
+  <div class="flex flex-col items-center justify-center min-h-screen">
+    <div id="header-container" class="px-4 py-5 mt-8 space-x-4">
+      <h1 class="text-8xl font-bold mb-10">Shahe Bannis</h1>
+      <h2 class="text-xl mb-3">
+        <span class="">Tech-fueled journeys, guided by philosophical inquiry</span>
+      </h2>
+      <br>
+      <div class="flex space-x-4">
+        <a href="https://www.linkedin.com/in/shahe-bannis/" target="_blank" class="text-xl text-black hover:text-pink-600 transition-colors duration-200 ease-in-out"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/shahebannis" target="_blank" class="text-xl text-black hover:text-pink-600 transition-colors duration-200 ease-in-out"><i class="fab fa-github"></i></a>
+        <a href="mailto:shahe.bannis+website@gmail.com" target="_blank" class="text-xl text-black hover:text-pink-600 transition-colors duration-200 ease-in-out"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("dark-mode");
+      document.getElementById("dark-mode-toggle").innerText = "☀️";
+    });
+
+    document.getElementById("dark-mode-toggle").addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      const toggleBtn = document.getElementById("dark-mode-toggle");
+      const taskbar = document.getElementById("taskbar");
+      const isDarkModeOn = document.body.classList.contains("dark-mode");
+
+      toggleBtn.innerText = isDarkModeOn ? "☀️" : "🌓";
+      
+      if (isDarkModeOn) {
+        taskbar.classList.remove("light-mode");
+      } else {
+        taskbar.classList.add("light-mode");
+      }
+    });
+
+    // Scroll behavior for the taskbar
+    let lastScrollTop = 0;
+    const taskbar = document.getElementById("taskbar");
+
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+        taskbar.classList.add("hidden");
+      } else {
+        taskbar.classList.remove("hidden");
+      }
+
+      lastScrollTop = scrollTop;
+    });
+  </script>
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="JavaScript/particles.js"></script>
+</body>
+</html>

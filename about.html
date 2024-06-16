@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/74209018?v=4">
+  <link rel="stylesheet" href="style.css">
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+
+  <title>About - Shahe Bannis</title>
+  
+</head>
+<body class="bg-white dark-mode relative">
+  <div id="particles-js"></div>
+  
+  <!-- Taskbar -->
+  <nav id="taskbar" class="taskbar text-white">
+    <a href="index.html" class="home-link">Home</a>
+    <div class="nav-items">
+        <div class="center-with-button">
+            <a href="about.html" class="hover:text-gray-300 transition-colors duration-200">About</a>
+            <a href="projects.html" class="hover:text-gray-300 transition-colors duration-200">Projects</a>
+            <a href="blog.html" class="hover:text-gray-300 transition-colors duration-200">Blogs</a>
+            <a href="contact.html" class="hover:text-gray-300 transition-colors duration-200">Contact</a>
+        </div>
+        <button id="dark-mode-toggle" class="ml-4 p-2 text-white rounded shadow-md">☀️</button>
+    </div>
+  </nav>
+
+  <div class="flex flex-col items-center justify-center min-h-screen about-me-div">
+    <div id="about-container" class="px-4 py-5 mt-20 space-y-4 max-w-4xl text-center">
+      <h1 class="text-5xl font-bold mb-10">About Me</h1>
+      <div class="card">
+        <p class="text-lg mb-3">Hello, I'm Shahe Bannis. I'm a cybersecurity and AI enthusiast with a deep passion for exploring the intricacies of digital security and artificial intelligence. My journey in technology started early, and I've since dedicated myself to mastering the skills required to excel in these fields.</p>
+        
+        <!-- <h2 class="text-2xl font-bold mb-4">Professional Contributions</h2>
+        <p class="text-lg mb-3">I am an active contributor to the <a href="https://www.debian.org/" class="text-blue-500 hover:underline">Debian project</a>, where I help maintain and improve one of the most robust and widely used Linux distributions. My work here involves collaborating with other developers, troubleshooting issues, and ensuring the stability and security of the Debian ecosystem.</p> -->
+  
+        <h2 class="text-2xl font-bold mb-4">Hackathons and Achievements</h2>
+        <p class="text-lg mb-3">I regularly participate in hackathons to challenge myself and stay at the forefront of technological advancements. Recently, my team and I were honored to win the "Best AI Solution for Cybersecurity" at JACHacks, which is a testament to our innovative approach, collaboration, and creativity in solving complex problems.</p>
+  
+        <h2 class="text-2xl font-bold mb-4">Cybersecurity and AI Projects</h2>
+        <p class="text-lg mb-3">I also practice using Capture the Flag (CTF) training exercises and participate in bug hunting on platforms like HackerOne, where I hone my skills by identifying and resolving security flaws in real-world applications.</p>
+  
+        <h2 class="text-2xl font-bold mb-4">Personal Projects</h2>
+        <p class="text-lg mb-3">This website serves as a showcase of my work and achievements. Here, you can find detailed information about my projects, contributions, and the various initiatives I'm involved in. Feel free to explore my portfolio, and if you have any questions or would like to collaborate, don't hesitate to <a class="not-taskbar" href="contact.html">reach out!</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("dark-mode");
+      document.getElementById("dark-mode-toggle").innerText = "☀️";
+    });
+
+    document.getElementById("dark-mode-toggle").addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      const toggleBtn = document.getElementById("dark-mode-toggle");
+      const taskbar = document.getElementById("taskbar");
+      const isDarkModeOn = document.body.classList.contains("dark-mode");
+
+      toggleBtn.innerText = isDarkModeOn ? "☀️" : "🌓";
+      
+      if (isDarkModeOn) {
+        taskbar.classList.remove("light-mode");
+      } else {
+        taskbar.classList.add("light-mode");
+      }
+    });
+
+    let lastScrollTop = 0;
+    const taskbar = document.getElementById("taskbar");
+
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+        taskbar.classList.add("hidden");
+      } else {
+        taskbar.classList.remove("hidden");
+      }
+
+      lastScrollTop = scrollTop;
+    });
+  </script>
+  <!-- Scripts -->
+  <script type="text/javascript" src="JavaScript/particles.js"></script>
+</body>
+</html>
