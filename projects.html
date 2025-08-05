@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/74209018?v=4">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.2.x/dist/typography.min.css"/>
   <link rel="stylesheet" href="style.css">
   <title>Shahe Bannis - Projects</title>
   <style>
@@ -33,6 +34,10 @@
       padding: 1rem;
       cursor: pointer;
       margin-bottom: 1rem;
+      min-height: 10rem; /* Adjust as needed for your content */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .dark-mode .project-card {
@@ -40,8 +45,12 @@
       color: #f8f8f8;
       padding: 1rem;
       border-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 6px rgba(151, 151, 151, 0.1), 0 1px 3px rgba(150, 150, 150, 0.06);
       transition: transform 0.3s;
+      min-height: 10rem; /* Adjust as needed for your content */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .project-card:hover {
@@ -56,6 +65,27 @@
 
     .project-link:hover {
       color: #e67e22;
+    }
+
+    .prose {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+      max-width: 100% !important;
+    }
+    .prose strong, .prose b {
+      color: #f39c12; /* Orange for strong text */
+    }
+    .prose ul > li::marker,
+    .prose ol > li::marker {
+      color: #f39c12; /* Orange for list markers */
+    } 
+    .prose a {
+      color: #f39c12 !important; /* Orange for links */
+      text-decoration: underline;
+    }
+
+    .prose a:hover {
+      color: #e67e22; /* Slightly darker orange on hover */
     }
   </style>
 </head>
@@ -88,32 +118,71 @@
 
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script type="text/javascript" src="JavaScript/particles.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.add("dark-mode");
       document.getElementById("dark-mode-toggle").innerText = "☀️";
 
-      // Fetch projects from GitHub
-      fetch('https://api.github.com/users/shahebannis/repos')
-        .then(response => response.json())
-        .then(repos => {
-          const projectsList = document.getElementById('projects-list');
-          repos.forEach(repo => {
-            const projectCard = document.createElement('div');
-            // projectCard.classList.add('project-box');
-            projectCard.className = 'project-card';
+      fetch('projects/projects.json')
+      .then(res => res.json())
+      .then(projects => {
+        const projectsList = document.getElementById('projects-list');
+        projects.forEach(project => {
+          const card = document.createElement('div');
+          card.className = 'project-card relative';
 
-            projectCard.innerHTML = `
-              <h2 class="text-2xl font-bold">${repo.name}</h2>
-              <p class="mt-2">${repo.description || 'No description available'}</p>
-              <a href="${repo.html_url}" target="_blank" class="project-link mt-4 inline-block">View on GitHub</a>
-            `;
+          // Badge for private projects
+          const privateBadge = project.private
+            ? `<span class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">Private</span>`
+            : '';
 
-            projectsList.appendChild(projectCard);
-          });
-        })
-        .catch(error => console.error('Error fetching repos:', error));
+            // GitHub link or private note
+            const githubSection = project.github
+              ? `<a href="${project.github}" target="_blank" class="project-link">GitHub</a>`
+              : `<span class="text-gray-500 text-sm">Source available on request</span>`;
+
+          card.innerHTML = `
+            ${privateBadge}
+            <h2 class="text-2xl font-bold mb-2">${project.title}</h2>
+            <p class="mb-2">${project.description}</p>
+            ${githubSection}
+            <div class="flex justify-end mt-6">
+              <button class="expand-btn bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded shadow">Learn More</button>
+            </div>
+          `;
+          card.querySelector('.expand-btn').onclick = () => {
+            const modal = document.getElementById('project-modal');
+            const modalContent = document.getElementById('modal-content');
+            modal.classList.remove('hidden');
+            modalContent.innerHTML = '<p class="text-gray-500">Loading...</p>';
+            fetch(project.md)
+              .then(res => {
+                if (!res.ok) throw new Error('Markdown file not found');
+                return res.text();
+              })
+              .then(md => {
+                modalContent.innerHTML = marked.parse(md);
+              })
+              .catch(err => {
+                modalContent.innerHTML = '<p class="text-red-500">Could not load details.</p>';
+              });
+          };
+
+          // Close modal logic
+          document.getElementById('close-modal').onclick = () => {
+            document.getElementById('project-modal').classList.add('hidden');
+          };
+          document.getElementById('project-modal').onclick = (e) => {
+            if (e.target === e.currentTarget) {
+              e.currentTarget.classList.add('hidden');
+            }
+          };
+          projectsList.appendChild(card);
+        });
+      });
     });
 
     document.getElementById("dark-mode-toggle").addEventListener("click", () => {
@@ -135,6 +204,36 @@
         box.classList.toggle('dark');
       });
     });
+
+    
   </script>
+  <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+  <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg max-w-3xl w-full p-8 relative">
+    <button id="close-modal" class="absolute top-4 right-4 text-2xl text-gray-700 dark:text-gray-200 hover:text-red-500">&times;</button>
+    <div id="modal-content" class="prose dark:prose-invert overflow-y-auto" style="max-height:70vh;"></div>
+  </div>
+</div>
 </body>
 </html>
+
+
+    <!-- //   // Fetch projects from GitHub
+    //   fetch('https://api.github.com/users/shahebannis/repos')
+    //     .then(response => response.json())
+    //     .then(repos => {
+    //       const projectsList = document.getElementById('projects-list');
+    //       repos.forEach(repo => {
+    //         const projectCard = document.createElement('div');
+    //         // projectCard.classList.add('project-box');
+    //         projectCard.className = 'project-card';
+
+    //         projectCard.innerHTML = `
+    //           <h2 class="text-2xl font-bold">${repo.name}</h2>
+    //           <p class="mt-2">${repo.description || 'No description available'}</p>
+    //           <a href="${repo.html_url}" target="_blank" class="project-link mt-4 inline-block">View on GitHub</a>
+    //         `;
+
+    //         projectsList.appendChild(projectCard);
+    //       });
+    //     })
+    //     .catch(error => console.error('Error fetching repos:', error)); -->

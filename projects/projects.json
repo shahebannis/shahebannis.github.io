@@ -1,0 +1,25 @@
+[
+  {
+    "title": "Portfolio Website",
+    "description": "A personal portfolio built with HTML, CSS, and JS.",
+    "tags": ["web", "portfolio"],
+    "github": "https://github.com/shahebannis/web-portfolio",
+    "md": "projects/portfolio.md",
+    "featured": true
+  },
+  {
+    "title": "Cool API Project",
+    "description": "A RESTful API for something cool.",
+    "tags": ["api", "node"],
+    "github": "https://github.com/shahebannis/cool-api",
+    "md": "projects/cool-api.md",
+    "featured": false
+  },
+  {
+    "title": "RUNA",
+    "description": "A powerful AI assistant to manage and automate your tasks.",
+    "tags": ["python", "AI", "private", "automation"],
+    "md": "projects/runa.md",
+    "private": true
+  }
+]
