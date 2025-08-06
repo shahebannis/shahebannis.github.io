@@ -21,5 +21,12 @@
     "tags": ["python", "AI", "private", "automation"],
     "md": "projects/runa.md",
     "private": true
+  },
+  {
+    "title": "IoT smart home system",
+    "description": "A smart home system that allows you to control your devices remotely.",
+    "tags": ["IoT", "smart devices", "home automation"],
+    "md": "projects/iot.md",
+    "github": "https://github.com/shahebannis/IoT"
   }
 ]
