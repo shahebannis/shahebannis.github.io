@@ -139,14 +139,22 @@
             ? `<span class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">Private</span>`
             : '';
 
-            // GitHub link or private note
-            const githubSection = project.github
-              ? `<a href="${project.github}" target="_blank" class="project-link">GitHub</a>`
-              : `<span class="text-gray-500 text-sm">Source available on request</span>`;
+          // GitHub link or private note
+          const githubSection = project.github
+            ? `<a href="${project.github}" target="_blank" class="project-link">GitHub</a>`
+            : `<span class="text-gray-500 text-sm">Source available on request</span>`;
+
+          // Badge for hackathon winning projects
+          const hackathonWinnerBadge = project.hackathon_winner
+            ? `<span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded shadow">Winner</span>`
+            : '';
 
           card.innerHTML = `
-            ${privateBadge}
-            <h2 class="text-2xl font-bold mb-2">${project.title}</h2>
+            <div class="relative">
+              ${privateBadge}
+              ${hackathonWinnerBadge}
+              <h2 class="text-2xl font-bold mb-2 mt-6">${project.title}</h2>
+            </div>
             <p class="mb-2">${project.description}</p>
             ${githubSection}
             <div class="flex justify-end mt-6">

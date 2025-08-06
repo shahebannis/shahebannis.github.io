@@ -28,5 +28,13 @@
     "tags": ["IoT", "smart devices", "home automation"],
     "md": "projects/iot.md",
     "github": "https://github.com/shahebannis/IoT"
+  },
+  {
+    "title": "Phishing-Detector",
+    "description": "A machine learning model to detect phishing emails and train you to identify them.",
+    "tags": ["Phshing Detection", "cybersecurity", "machine learning", "python"],
+    "md": "projects/phishing.md",
+    "github": "https://github.com/Org0220/Phishing-Detector",
+    "hackathon_winner": true
   }
 ]
