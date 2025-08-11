@@ -36,5 +36,12 @@
     "md": "projects/phishing.md",
     "github": "https://github.com/Org0220/Phishing-Detector",
     "hackathon_winner": true
+  },
+  {
+    "title": "Graphics Project",
+    "description": "Rendering a custom blender model in 3d using C++ and OpenGL",
+    "tags": ["C++", "OpenGL", "Blender", "Graphics"],
+    "md": "projects/graphics.md",
+    "github": "https://github.com/HragBankian/Computer_Graphics_Projects/tree/main"
   }
 ]
