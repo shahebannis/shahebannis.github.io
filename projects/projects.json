@@ -8,10 +8,10 @@
     "featured": true
   },
   {
-    "title": "Cool API Project",
-    "description": "A RESTful API for something cool.",
+    "title": "Movie API Project",
+    "description": "A RESTful API for Movies, Shows, Actors, Characters and more!.",
     "tags": ["api", "node"],
-    "github": "https://github.com/shahebannis/cool-api",
+    "github": "https://github.com/JabArmen/movie-api",
     "md": "projects/cool-api.md",
     "featured": false
   },
