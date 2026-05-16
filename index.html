@@ -1,111 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous">
-  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/74209018?v=4">
-  <link rel="stylesheet" href="style.css">
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shahe — CS graduate researcher in multimedia streaming at Concordia. Building things that matter." />
+  <title>Shahe's portfolio</title>
 
-  <title>Shahe's Warehouse</title>
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Sora:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/main.css" />
 </head>
+<body>
 
-<body class="bg-white dark-mode relative overflow-hidden">
-  <div id="particles-js"></div>
-  
-  <!-- Taskbar -->
-  <nav id="taskbar" class="taskbar text-white">
-    <a href="#" class="home-link">Home</a>
-    <div class="nav-items">
-        <div class="center-with-button">
-            <a href="about.html" class="hover:text-gray-300 transition-colors duration-200">About</a>
-            <a href="projects.html" class="hover:text-gray-300 transition-colors duration-200">Projects</a>
-            <a href="blog.html" class="hover:text-gray-300 transition-colors duration-200">Blogs</a>
-            <a href="contact.html" class="hover:text-gray-300 transition-colors duration-200">Contact</a>
-        </div>
-        <button id="dark-mode-toggle" class="ml-4 p-2 text-white rounded shadow-md">☀️</button>
-    </div>
+  <!-- NAV -->
+  <nav class="nav">
+    <span class="nav__mark">shahe.dev</span>
+    <ul class="nav__links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
-  
-  <div class="flex flex-col items-center justify-center min-h-screen">
-    <div id="header-container" class="px-4 py-5 mt-8 space-x-4">
-      <h1 class="text-8xl font-bold mb-10">Shahe Bannis</h1>
-      <h2 class="text-xl mb-3">
-        <span id="tagline" class="">Innovating through experimentation and code</span>
-      </h2>
-      <br>
-      <div class="flex space-x-4">
-        <a href="https://www.linkedin.com/in/shahe-bannis/" target="_blank" class="text-xl text-black hover:text-pink-600 transition-colors duration-200 ease-in-out"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/shahebannis" target="_blank" class="text-xl text-black hover:text-pink-600 transition-colors duration-200 ease-in-out"><i class="fab fa-github"></i></a>
-        <a href="mailto:" target="_blank" class="text-xl text-black hover:text-pink-600 transition-colors duration-200 ease-in-out"><i class="fas fa-envelope"></i></a>
+
+
+  <!-- HERO -->
+  <section class="section section--hero" id="hero">
+    <div class="wrap">
+      <p class="section__eyebrow">MSc Computer Science &nbsp;·&nbsp; Concordia</p>
+      <h1 class="hero__name">
+        Shahe Bannis<br />
+        <!-- I build <span>careful</span> software. -->
+      </h1>
+      <p class="hero__bio">
+        Master's student, part-time researcher, full-time tinkerer. 
+        My thesis is in low latency volumetric multimedia streaming, 
+        but I spend a lot of time building things outside of it too. 
+        Looking for roles where research and engineering overlap.
+      </p>
+      <!-- <p class="hero__bio">
+        I also enjoy competitions, having participated in several over the years. From Capture-The-Flag cybersecurity competitions to more general hackathons.
+      </p> -->
+      <!-- <p class="hero__bio">
+        Graduate researcher working at the intersection of [area A] and [area B].
+        My thesis explores how [one honest sentence about what you're actually doing].
+      </p>
+      <p class="hero__bio">
+        I care about writing code that's readable first and clever second —
+        and about understanding the systems I build, not just shipping them.
+      </p> -->
+      <div class="hero__cta">
+        <a href="#projects" class="btn btn--solid">See my work</a>
+        <a href="https://github.com/shahebannis" target="_blank" rel="noopener" class="btn btn--outline">GitHub ↗</a>
+        <!-- <a href="resume.pdf" class="btn btn--outline">Résumé ↗</a> -->
       </div>
     </div>
-  </div>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.body.classList.add("dark-mode");
-      document.getElementById("dark-mode-toggle").innerText = "☀️";
-    });
+  </section>
 
-    document.getElementById("dark-mode-toggle").addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
 
-      const toggleBtn = document.getElementById("dark-mode-toggle");
-      const taskbar = document.getElementById("taskbar");
-      const isDarkModeOn = document.body.classList.contains("dark-mode");
+  <!-- RESEARCH -->
+  <section class="section" id="research">
+    <div class="wrap">
+      <p class="section__eyebrow">Research</p>
+      <div class="thesis">
+        <p class="thesis__label">MSc Thesis &nbsp;·&nbsp; Concordia &nbsp;·&nbsp; in progress</p>
+        <p class="thesis__title">
+          Low latency Volumetric Multimedia Streaming
+        </p>
+        <p class="thesis__desc">
+          I'm researching dynamic point cloud compression for immersive 3D media, focussing on the effect of compression on the perceived quality of the final output. 
+          The project evaluates the codec's outputs using both objective metrics and subjective user studies. 
+          Its goal is to build a fair evaluation framework for understanding how to optimize point cloud video for real-time streaming.
+        </p>
+      </div>
+    </div>
+  </section>
 
-      toggleBtn.innerText = isDarkModeOn ? "☀️" : "🌓";
-      
-      if (isDarkModeOn) {
-        taskbar.classList.remove("light-mode");
-      } else {
-        taskbar.classList.add("light-mode");
-      }
-    });
 
-    // Tagline rotation
-    const taglines = [
-      "Innovating through experimentation and code",
-      "Inventing, improving, and sharing—one line of code at a time",
-      "Building solutions, learning along the way",
-      "Driven by discovery, defined by development",
-      "Transforming ideas into interactive experiences",
-      "Crafting code, creating connections",
-      "Coding with purpose, growing with every project",
-    ];
-    let taglineIndex = 0;
-    const taglineElement = document.getElementById("tagline");
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <p class="section__eyebrow">Projects</p>
 
-    setInterval(() => {
-      taglineIndex = (taglineIndex + 1) % taglines.length;
-      taglineElement.textContent = taglines[taglineIndex];
-    }, 7200000); // 2 hours in milliseconds
+      <div class="projects">
 
-    // Scroll behavior for the taskbar
-    let lastScrollTop = 0;
-    const taskbar = document.getElementById("taskbar");
+        <a href="https://github.com/Org0220/Phishing-Detector" target="_blank" rel="noopener" class="project">
+          <div class="project__left">
+            <p class="project__name">Phishing Detector - Won 1st Place JacHacks cybersecurity track</p>
+            <p class="project__desc">
+              Built for John-Abbott's Hackathon competition. <br> WebApp using a custom-built and trained machine learning model to analyze emails and identify potential phishing attempts. Includes a "training mode" for training people to better recognize phishing emails.
+            </p>
+            <div class="project__tags">
+              <span class="tag">Python</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">PHP</span>
+              <span class="tag">Machine Learning</span>
+            </div>
+          </div>
+          <span class="project__arrow">↗</span>
+        </a>
 
-    window.addEventListener("scroll", () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        <a href="https://github.com/thiomajid/SyncBit-Desktop" target="_blank" rel="noopener" class="project">
+          <div class="project__left">
+            <p class="project__name">SyncBit Desktop</p>
+            <p class="project__desc">
+               A decentralized watch-party application that enables synchronized Video-on-Demand and streaming, optimized for low bandwidth scenarios.
+            </p>
+            <div class="project__tags">
+              <span class="tag">Go</span>
+              <span class="tag">Distributed Systems</span>
+              <span class="tag">wireless networks</span>
+            </div>
+          </div>
+          <span class="project__arrow">↗</span>
+        </a>
 
-      if (scrollTop > lastScrollTop) {
-        taskbar.classList.add("hidden");
-      } else {
-        taskbar.classList.remove("hidden");
-      }
+        <a href="https://github.com/shahebannis/GeometricModellingFinal" target="_blank" rel="noopener" class="project">
+          <div class="project__left">
+            <p class="project__name">Geometric Modelling Final Project</p>
+            <p class="project__desc">
+              Applies geometric preprocessing techniques then compresses dynamic point cloud data in order to analyze and compare their effects on different compression techniques. Includes a custom implementation of MLS (Moving Least Squares) smoothing, geometric normalization and voxel/radius based density normalization.
+            </p>
+            <div class="project__tags">
+              <span class="tag">Python</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+          <span class="project__arrow">↗</span>
+        </a>
 
-      lastScrollTop = scrollTop;
-    });
-  </script>
+        <a href="https://github.com/shahebannis/RUNA" target="_blank" rel="noopener" class="project">
+          <div class="project__left">
+            <p class="project__name">RUNA</p>
+            <p class="project__desc">
+              RUNA is an AI assistant inspired by Jarvis from Iron Man. 
+              Hosted on a local server, it manages my tasks, files and home server, and is slowly being 
+              integrated with other personal projects as a sort of "AI swiss army knife" for my personal use. 
+            </p>
+            <div class="project__tags">
+              <span class="tag">Python</span>
+              <span class="tag">self-hosting</span>
+              <span class="tag">sysadmin</span>
+              <span class="tag">automation</span>
+            </div>
+          </div>
+          <span class="project__arrow">↗</span>
+        </a>
+        <!-- project template -->
+        <!-- <a href="https://github.com/yourusername/project-template" target="_blank" rel="noopener" class="project">
+          <div class="project__left">
+            <p class="project__name">Project Template</p>
+            <p class="project__desc">
+              A reusable template for creating new projects with consistent structure and styling.
+            </p>
+            <div class="project__tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+          <span class="project__arrow">↗</span>
+        </a> -->
+        <a href="https://github.com/shahebannis" target="_blank" rel="noopener" class="project">
+          <div class="project__left">
+            <p class="project__name">More on GitHub</p>
+            <p class="project__desc">
+              This is just a selection of my work. Check out my GitHub for more projects, including smaller ones and other contributions I have made.
+            </p>
+          </div>
+          <span class="project__arrow">↗</span>
+        </a>
+      </div>  
+    </div>
+  </section>
 
-  <!-- Scripts -->
-  <script type="text/javascript" src="JavaScript/particles.js"></script>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="wrap">
+      <p class="section__eyebrow">Skills</p>
+      <div class="skills">
+
+        <div class="skill-group">
+          <p class="skill-group__label">Languages</p>
+          <div class="skill-group__items">
+            <span class="tag">Python</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">C++</span>
+            <span class="tag">Rust</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Go</span>
+            <span class="tag">PHP</span>
+            <span class="tag">Bash</span>
+            <span class="tag">Java</span>
+            <span class="tag">C#</span>
+            <span class="tag">SQL</span>
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">... and more!</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group__label">Frameworks</p>
+          <div class="skill-group__items">
+            <span class="tag">PyTorch</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">React</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Angular</span>
+            <span class="tag">Next.js</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group__label">Tools</p>
+          <div class="skill-group__items">
+            <span class="tag">Git</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Postgres</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Heroku</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group__label">Areas</p>
+          <div class="skill-group__items">
+            <span class="tag">ML systems</span>
+            <span class="tag">Algorithms</span>
+            <span class="tag">Networks</span>
+            <span class="tag">IoT</span>
+            <span class="tag">Volumetric Multimedia</span>
+            <span class="tag">Low-latency streaming</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <p class="section__eyebrow">Contact</p>
+
+      <div class="contact-list">
+        <a href="mailto:shahe.bannis+portfolio@gmail.com" class="contact-row">
+          <div class="contact-row__left">
+            <span class="contact-row__type">email</span>
+            <span class="contact-row__val">shahe.bannis@gmail.com</span>
+          </div>
+          <span class="contact-row__arrow">↗</span>
+        </a>
+        <a href="https://github.com/shahebannis" target="_blank" rel="noopener" class="contact-row">
+          <div class="contact-row__left">
+            <span class="contact-row__type">github</span>
+            <span class="contact-row__val">github.com/shahebannis</span>
+          </div>
+          <span class="contact-row__arrow">↗</span>
+        </a>
+        <a href="https://linkedin.com/in/shahe-bannis" target="_blank" rel="noopener" class="contact-row">
+          <div class="contact-row__left">
+            <span class="contact-row__type">linkedin</span>
+            <span class="contact-row__val">linkedin.com/in/shahe-bannis</span>
+          </div>
+          <span class="contact-row__arrow">↗</span>
+        </a>
+        <!-- <a href="resume.pdf" class="contact-row">
+          <div class="contact-row__left">
+            <span class="contact-row__type">résumé</span>
+            <span class="contact-row__val">Download PDF</span>
+          </div>
+          <span class="contact-row__arrow">↗</span>
+        </a> -->
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer__left">Shahe &nbsp;<span>·</span>&nbsp; 2025</p>
+    <p class="footer__right">Built by me</p>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

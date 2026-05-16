@@ -1,5 +1,0 @@
-## Graphics Project: Contigo Model Visualization
-
-For this project, we designed and rendered a Contigo bottle model using Blender and C++ with OpenGL. The workflow included creating a detailed 3D model in Blender, applying realistic textures and materials to differentiate plastic and metallic components, and exporting the skeletal structure for further visualization.
-
-In the C++/OpenGL application, we implemented interactive controls via keybinds to rotate and move the model, toggle between the vector skeleton and fully rendered views, and switch material display modes. Dynamic lighting was added to enhance realism, with material properties adjusted to produce appropriate shine effects based on whether a part was plastic or metallic. This project demonstrates proficiency in 3D modeling, texture mapping, skeletal visualization, and real-time rendering techniques.
