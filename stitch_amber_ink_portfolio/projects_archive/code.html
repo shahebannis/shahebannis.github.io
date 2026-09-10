@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects_Archive | CS_PORTFOLIO.EXE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#fffbff",
+                    "tertiary-container": "#bc5540",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffdbc9",
+                    "secondary": "#934b19",
+                    "surface-container-high": "#e9e9dd",
+                    "primary": "#9c3f00",
+                    "outline": "#8c7166",
+                    "on-tertiary-fixed": "#3e0500",
+                    "surface-container": "#efeee3",
+                    "on-error": "#ffffff",
+                    "background": "#fbfaee",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-tertiary-fixed-variant": "#802918",
+                    "primary-fixed": "#ffdbcc",
+                    "secondary-fixed-dim": "#ffb68c",
+                    "on-primary-fixed": "#351000",
+                    "inverse-on-surface": "#f2f1e5",
+                    "surface-tint": "#a04100",
+                    "surface-bright": "#fbfaee",
+                    "on-primary-container": "#fffbff",
+                    "on-secondary-fixed-variant": "#753401",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#584238",
+                    "surface-dim": "#dbdbcf",
+                    "tertiary-fixed": "#ffdad3",
+                    "secondary-container": "#ffa26a",
+                    "surface-container-low": "#f5f4e8",
+                    "surface": "#fbfaee",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-background": "#1b1c15",
+                    "on-secondary-container": "#783603",
+                    "on-secondary-fixed": "#321200",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#e0c0b2",
+                    "tertiary": "#9c3e2b",
+                    "on-surface": "#1b1c15",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "surface-container-highest": "#e4e3d7",
+                    "primary-container": "#c45100",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e4e3d7",
+                    "inverse-primary": "#ffb693",
+                    "inverse-surface": "#303129",
+                    "tertiary-fixed-dim": "#ffb4a5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "base-unit": "8px",
+                    "panel-margin": "32px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Montserrat"],
+                    "body-sm": ["JetBrains Mono"],
+                    "body-lg": ["JetBrains Mono"],
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "900"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .halftone-bg {
+            background-image: radial-gradient(#934b19 1px, transparent 1px);
+            background-size: 8px 8px;
+            opacity: 0.1;
+        }
+        .comic-panel-shadow {
+            box-shadow: 6px 6px 0px 0px rgba(27, 28, 21, 1);
+        }
+        .button-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(27, 28, 21, 1);
+        }
+        .btn-interact:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px rgba(27, 28, 21, 1);
+        }
+        .nav-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(147,75,25,1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center px-gutter py-4 sticky top-0 z-50 bg-background border-b-4 border-on-background nav-shadow">
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg uppercase tracking-tighter text-primary">CS_PORTFOLIO.EXE</div>
+<nav class="hidden md:flex gap-4">
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary px-2 py-1 hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all" href="#">COMPILER</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container bg-secondary-container border-2 border-on-background px-2 py-1" href="#">PANELS</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary px-2 py-1 hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all" href="#">LOGS</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary px-2 py-1 hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all" href="#">SOURCE</a>
+</nav>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-4 py-2 border-2 border-on-background button-shadow btn-interact">
+            HIRE_ME
+        </button>
+</header>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col w-64 fixed left-0 top-0 h-full p-4 gap-4 bg-surface-container border-r-4 border-on-background shadow-[4px_0px_0px_0px_rgba(147,75,25,1)] z-40">
+<div class="mt-20">
+<div class="font-headline-md text-headline-md text-on-surface mb-1">ROOT_USER</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant opacity-70">v2.4.0-stable</div>
+</div>
+<nav class="flex flex-col gap-2 mt-8">
+<a class="flex items-center gap-3 p-3 font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+                    DASHBOARD
+                </a>
+<a class="flex items-center gap-3 p-3 font-body-sm text-body-sm bg-secondary-container text-on-secondary-container border-2 border-on-background font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+                    REPOS
+                </a>
+<a class="flex items-center gap-3 p-3 font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                    PAPERS
+                </a>
+<a class="flex items-center gap-3 p-3 font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="memory">memory</span>
+                    CORE
+                </a>
+</nav>
+<button class="mt-auto bg-tertiary-container text-on-tertiary-container font-label-caps text-label-caps py-4 border-2 border-on-background button-shadow btn-interact">
+                PULL_REQUEST
+            </button>
+</aside>
+<!-- Main Content Area -->
+<main class="w-full lg:ml-64 p-gutter min-h-screen">
+<div class="max-w-container-max mx-auto">
+<!-- Page Header Panel -->
+<section class="mb-12 border-4 border-on-background p-8 bg-surface-container-lowest comic-panel-shadow relative overflow-hidden">
+<div class="halftone-bg absolute inset-0 pointer-events-none"></div>
+<div class="relative z-10">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary uppercase mb-2">Projects_Archive</h1>
+<p class="font-body-lg text-body-lg max-w-2xl text-on-surface-variant">
+                            A curated selection of tactical software implementations, experimental kernels, and neural interface prototypes. Filtered by complexity and deployment status.
+                        </p>
+</div>
+</section>
+<!-- Project Grid (Bento/Comic Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Project Card 1 -->
+<div class="border-4 border-on-background p-6 bg-surface-container comic-panel-shadow flex flex-col hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[10px_10px_0px_0px_rgba(27,28,21,1)] transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-caps text-label-caps text-on-secondary-fixed-variant bg-secondary-fixed px-2 py-1 border-2 border-on-background">ISSUE_01</span>
+<span class="material-symbols-outlined text-secondary" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-4 group-hover:text-primary transition-colors">NEURAL_NET_V4</h2>
+<p class="font-body-sm text-body-sm mb-6 flex-grow">A high-performance asynchronous reinforcement learning environment for simulated robotics.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">PYTHON</span>
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">PYTORCH</span>
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">CUDA</span>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps py-3 border-2 border-on-background button-shadow btn-interact flex items-center justify-center gap-2">
+                            VIEW_SOURCE <span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span>
+</button>
+</div>
+<!-- Project Card 2 -->
+<div class="border-4 border-on-background p-6 bg-surface-container-high comic-panel-shadow flex flex-col hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[10px_10px_0px_0px_rgba(27,28,21,1)] transition-all group lg:scale-105 z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-caps text-label-caps text-on-tertiary-fixed-variant bg-tertiary-fixed px-2 py-1 border-2 border-on-background">SPECIAL_EDITION</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="database">database</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-4 group-hover:text-primary transition-colors">KV_DISTRIBUTED_FS</h2>
+<p class="font-body-sm text-body-sm mb-6 flex-grow">Low-latency key-value store with eventual consistency protocols and partitioned persistence.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">RUST</span>
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">TOKIO</span>
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">GRPC</span>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-3 border-2 border-on-background button-shadow btn-interact flex items-center justify-center gap-2">
+                            VIEW_SOURCE <span class="material-symbols-outlined text-sm" data-icon="data_object">data_object</span>
+</button>
+</div>
+<!-- Project Card 3 -->
+<div class="border-4 border-on-background p-6 bg-surface-container comic-panel-shadow flex flex-col hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[10px_10px_0px_0px_rgba(27,28,21,1)] transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-caps text-label-caps text-on-secondary-fixed-variant bg-secondary-fixed px-2 py-1 border-2 border-on-background">ISSUE_03</span>
+<span class="material-symbols-outlined text-secondary" data-icon="dashboard">dashboard</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-4 group-hover:text-primary transition-colors">CRYPTO_VIS_ENGINE</h2>
+<p class="font-body-sm text-body-sm mb-6 flex-grow">Real-time blockchain transaction visualizer using WebGL and custom shader pipelines.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">REACT</span>
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">THREEJS</span>
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">TYPESCRIPT</span>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps py-3 border-2 border-on-background button-shadow btn-interact flex items-center justify-center gap-2">
+                            VIEW_SOURCE <span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</button>
+</div>
+<!-- Project Card 4 -->
+<div class="border-4 border-on-background p-6 bg-surface-container comic-panel-shadow flex flex-col hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[10px_10px_0px_0px_rgba(27,28,21,1)] transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-caps text-label-caps text-on-secondary-fixed-variant bg-secondary-fixed px-2 py-1 border-2 border-on-background">ISSUE_04</span>
+<span class="material-symbols-outlined text-secondary" data-icon="security">security</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-4 group-hover:text-primary transition-colors">SECURE_SHELL_X</h2>
+<p class="font-body-sm text-body-sm mb-6 flex-grow">Custom SSH client featuring terminal multiplexing and biometric hardware key integration.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">GO</span>
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">OPENSSL</span>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps py-3 border-2 border-on-background button-shadow btn-interact flex items-center justify-center gap-2">
+                            VIEW_SOURCE <span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+</button>
+</div>
+<!-- Project Card 5 -->
+<div class="border-4 border-on-background p-6 bg-surface-container comic-panel-shadow flex flex-col hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[10px_10px_0px_0px_rgba(27,28,21,1)] transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-caps text-label-caps text-on-secondary-fixed-variant bg-secondary-fixed px-2 py-1 border-2 border-on-background">ISSUE_05</span>
+<span class="material-symbols-outlined text-secondary" data-icon="memory">memory</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-4 group-hover:text-primary transition-colors">ARM_EMU_CORE</h2>
+<p class="font-body-sm text-body-sm mb-6 flex-grow">A cycle-accurate ARMv7 instruction set emulator written in portable C++.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">C++</span>
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">ASSEMBLY</span>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps py-3 border-2 border-on-background button-shadow btn-interact flex items-center justify-center gap-2">
+                            VIEW_SOURCE <span class="material-symbols-outlined text-sm" data-icon="memory">memory</span>
+</button>
+</div>
+<!-- Project Card 6 -->
+<div class="border-4 border-on-background p-6 bg-surface-container comic-panel-shadow flex flex-col hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[10px_10px_0px_0px_rgba(27,28,21,1)] transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-caps text-label-caps text-on-secondary-fixed-variant bg-secondary-fixed px-2 py-1 border-2 border-on-background">ISSUE_06</span>
+<span class="material-symbols-outlined text-secondary" data-icon="language">language</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-4 group-hover:text-primary transition-colors">GRAPH_DB_LIGHT</h2>
+<p class="font-body-sm text-body-sm mb-6 flex-grow">In-memory graph database engine with native Cypher query support and ACID compliance.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">JAVA</span>
+<span class="font-label-caps text-[10px] px-2 py-0.5 border-2 border-on-background bg-white">NETTY</span>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps py-3 border-2 border-on-background button-shadow btn-interact flex items-center justify-center gap-2">
+                            VIEW_SOURCE <span class="material-symbols-outlined text-sm" data-icon="schema">schema</span>
+</button>
+</div>
+</div>
+<!-- Pagination/Load More Section -->
+<div class="mt-16 flex justify-center pb-20">
+<button class="bg-background text-on-surface font-label-caps text-label-caps px-12 py-4 border-4 border-on-background comic-panel-shadow btn-interact flex items-center gap-4 hover:bg-secondary-fixed">
+<span class="material-symbols-outlined" data-icon="refresh">refresh</span>
+                        LOAD_NEXT_SECTOR
+                    </button>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="w-full py-base-unit px-gutter flex flex-col md:flex-row justify-between items-center gap-4 bg-on-background text-secondary-fixed border-t-4 border-on-background">
+<div class="font-display-lg text-display-lg text-secondary-fixed">CS_P</div>
+<div class="font-label-caps text-label-caps text-secondary-fixed">© 2024 DEVNINJA_SYS. ALL RIGHTS RESERVED.</div>
+<div class="flex gap-6">
+<a class="font-label-caps text-label-caps text-secondary-fixed hover:text-primary-fixed transition-colors" href="#">GITHUB</a>
+<a class="font-label-caps text-label-caps text-secondary-fixed hover:text-primary-fixed transition-colors" href="#">LINKEDIN</a>
+<a class="font-label-caps text-label-caps text-secondary-fixed hover:text-primary-fixed transition-colors" href="#">X_COMMS</a>
+<a class="font-label-caps text-label-caps text-secondary-fixed hover:text-primary-fixed transition-colors" href="#">EMAIL</a>
+</div>
+</footer>
+<script>
+        // Micro-interactions for buttons
+        document.querySelectorAll('.btn-interact').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                // Subtle feedback handled by CSS transitions
+            });
+        });
+
+        // Simple Halftone dynamic effect
+        window.addEventListener('scroll', () => {
+            const halftone = document.querySelector('.halftone-bg');
+            if (halftone) {
+                const scrolled = window.pageYOffset;
+                halftone.style.backgroundPosition = `0px ${scrolled * 0.2}px`;
+            }
+        });
+    </script>
+</body></html>

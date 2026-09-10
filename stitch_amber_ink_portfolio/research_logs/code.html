@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Research_Logs | CS_PORTFOLIO.EXE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=JetBrains+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#fffbff",
+                        "tertiary-container": "#bc5540",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdbc9",
+                        "secondary": "#934b19",
+                        "surface-container-high": "#e9e9dd",
+                        "primary": "#9c3f00",
+                        "outline": "#8c7166",
+                        "on-tertiary-fixed": "#3e0500",
+                        "surface-container": "#efeee3",
+                        "on-error": "#ffffff",
+                        "background": "#fbfaee",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-tertiary-fixed-variant": "#802918",
+                        "primary-fixed": "#ffdbcc",
+                        "secondary-fixed-dim": "#ffb68c",
+                        "on-primary-fixed": "#351000",
+                        "inverse-on-surface": "#f2f1e5",
+                        "surface-tint": "#a04100",
+                        "surface-bright": "#fbfaee",
+                        "on-primary-container": "#fffbff",
+                        "on-secondary-fixed-variant": "#753401",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#584238",
+                        "surface-dim": "#dbdbcf",
+                        "tertiary-fixed": "#ffdad3",
+                        "secondary-container": "#ffa26a",
+                        "surface-container-low": "#f5f4e8",
+                        "surface": "#fbfaee",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1b1c15",
+                        "on-secondary-container": "#783603",
+                        "on-secondary-fixed": "#321200",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#e0c0b2",
+                        "tertiary": "#9c3e2b",
+                        "on-surface": "#1b1c15",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "surface-container-highest": "#e4e3d7",
+                        "primary-container": "#c45100",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e4e3d7",
+                        "inverse-primary": "#ffb693",
+                        "inverse-surface": "#303129",
+                        "tertiary-fixed-dim": "#ffb4a5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "base-unit": "8px",
+                        "panel-margin": "32px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Montserrat"],
+                        "body-sm": ["JetBrains Mono"],
+                        "body-lg": ["JetBrains Mono"],
+                        "display-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "label-caps": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "900"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "800"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .halftone-bg {
+            background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+            background-size: 8px 8px;
+            opacity: 0.1;
+        }
+        .comic-panel-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(147,75,25,1);
+        }
+        .comic-panel-shadow-hover:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px rgba(147,75,25,1);
+        }
+        .comic-panel-active:active {
+            transform: translate(2px, 2px);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-container selection:text-on-secondary-container min-h-screen">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center px-gutter py-4 sticky top-0 z-50 bg-background w-full border-b-4 border-on-background shadow-[4px_4px_0px_0px_rgba(147,75,25,1)]">
+<div class="font-display-lg text-display-lg-mobile uppercase tracking-tighter text-primary">CS_PORTFOLIO.EXE</div>
+<nav class="hidden md:flex gap-4">
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary px-2 py-1 transition-all hover:translate-x-[-2px] hover:translate-y-[-2px]" href="#">COMPILER</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary px-2 py-1 transition-all hover:translate-x-[-2px] hover:translate-y-[-2px]" href="#">PANELS</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container bg-secondary-container border-2 border-on-background px-2 py-1" href="#">LOGS</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary px-2 py-1 transition-all hover:translate-x-[-2px] hover:translate-y-[-2px]" href="#">SOURCE</a>
+</nav>
+<button class="font-label-caps text-label-caps bg-primary text-on-primary border-2 border-on-background px-4 py-2 comic-panel-shadow transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(147,75,25,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
+            HIRE_ME
+        </button>
+</header>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col w-64 fixed left-0 top-[84px] h-[calc(100vh-84px)] p-4 gap-4 bg-surface-container border-r-4 border-on-background shadow-[4px_0px_0px_0px_rgba(147,75,25,1)]">
+<div class="flex items-center gap-3 p-2 border-b-2 border-on-background pb-4">
+<div class="w-10 h-10 bg-tertiary border-2 border-on-background flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary">person</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface leading-tight">ROOT_USER</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">v2.4.0-stable</div>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 p-3 font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:border-2 hover:border-on-background transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span> DASHBOARD
+                </a>
+<a class="flex items-center gap-3 p-3 font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:border-2 hover:border-on-background transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span> REPOS
+                </a>
+<a class="flex items-center gap-3 p-3 font-body-sm text-body-sm bg-secondary-container text-on-secondary-container border-2 border-on-background font-bold transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span> PAPERS
+                </a>
+<a class="flex items-center gap-3 p-3 font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:border-2 hover:border-on-background transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="memory">memory</span> CORE
+                </a>
+</nav>
+<div class="mt-auto">
+<button class="w-full font-label-caps text-label-caps bg-tertiary-container text-on-tertiary-container border-2 border-on-background p-3 comic-panel-shadow transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(147,75,25,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
+                    PULL_REQUEST
+                </button>
+</div>
+</aside>
+<!-- Main Content (The Canvas) -->
+<main class="w-full lg:ml-64 p-gutter bg-surface-dim min-h-screen relative">
+<!-- Halftone decorative layer -->
+<div class="absolute inset-0 halftone-bg pointer-events-none"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<header class="mb-panel-margin">
+<h1 class="font-display-lg text-display-lg text-primary uppercase mb-2">Research_Logs</h1>
+<div class="h-2 w-32 bg-on-background"></div>
+<p class="font-body-lg text-body-lg mt-4 max-w-2xl text-on-surface-variant">
+                        Technical deep-dives into distributed systems, neural architecture, and low-level optimization protocols.
+                    </p>
+</header>
+<!-- Timeline Layout -->
+<div class="relative pl-8 md:pl-12 border-l-4 border-on-background ml-4">
+<!-- Paper 1 -->
+<div class="relative mb-12 group">
+<!-- Timeline Node -->
+<div class="absolute -left-[46px] md:-left-[54px] top-6 w-8 h-8 bg-primary border-4 border-on-background flex items-center justify-center rotate-45 transition-transform group-hover:rotate-0">
+<span class="material-symbols-outlined text-white text-sm -rotate-45 group-hover:rotate-0 transition-transform">bolt</span>
+</div>
+<article class="bg-surface border-4 border-on-background p-6 comic-panel-shadow transition-all hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_0px_rgba(147,75,25,1)]">
+<div class="flex flex-wrap justify-between items-start gap-4 mb-4">
+<div>
+<span class="font-label-caps text-label-caps bg-secondary-fixed text-on-secondary-fixed px-2 py-1 mb-2 inline-block">JANUARY 2024</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">OPTIMIZING_LATENCY_IN_PEER_NETWORKS</h2>
+<p class="font-body-sm text-body-sm text-primary font-bold mt-1">JOURNAL OF DISTRIBUTED LOGIC</p>
+</div>
+<div class="flex gap-2">
+<div class="px-2 py-1 border-2 border-on-background font-label-caps text-label-caps bg-surface-container-highest">NETWORKING</div>
+<div class="px-2 py-1 border-2 border-on-background font-label-caps text-label-caps bg-surface-container-highest">P2P</div>
+</div>
+</div>
+<hr class="border-t-2 border-on-background mb-4"/>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                                Abstract: This paper explores novel propagation methods for reducing block-time synchronization in decentralized environments. We propose a "Shift-Gossip" protocol that leverages topological heuristics to achieve sub-50ms latency across 10k nodes without sacrificing Byzantine fault tolerance.
+                            </p>
+<div class="mt-6 flex justify-end">
+<button class="font-label-caps text-label-caps border-2 border-on-background px-4 py-2 flex items-center gap-2 hover:bg-secondary-container transition-colors">
+                                    READ_FULL_LOG <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Paper 2 -->
+<div class="relative mb-12 group">
+<!-- Timeline Node -->
+<div class="absolute -left-[46px] md:-left-[54px] top-6 w-8 h-8 bg-tertiary border-4 border-on-background flex items-center justify-center rotate-45 transition-transform group-hover:rotate-0">
+<span class="material-symbols-outlined text-white text-sm -rotate-45 group-hover:rotate-0 transition-transform">biotech</span>
+</div>
+<article class="bg-surface border-4 border-on-background p-6 comic-panel-shadow transition-all hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_0px_rgba(147,75,25,1)]">
+<div class="flex flex-wrap justify-between items-start gap-4 mb-4">
+<div>
+<span class="font-label-caps text-label-caps bg-secondary-fixed text-on-secondary-fixed px-2 py-1 mb-2 inline-block">NOVEMBER 2023</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">NEURAL_SYNAPSE_PRUNING_V2</h2>
+<p class="font-body-sm text-body-sm text-primary font-bold mt-1">AI_SYSTEMS_SYMPOSIUM</p>
+</div>
+<div class="flex gap-2">
+<div class="px-2 py-1 border-2 border-on-background font-label-caps text-label-caps bg-surface-container-highest">ML</div>
+<div class="px-2 py-1 border-2 border-on-background font-label-caps text-label-caps bg-surface-container-highest">OPTIMIZATION</div>
+</div>
+</div>
+<hr class="border-t-2 border-on-background mb-4"/>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                                Abstract: Investigating the metabolic-inspired pruning of dense neural weights. Our findings suggest that 40% of non-linear activations can be discarded during the inference phase with <0.02% accuracy loss. Documentation includes the experimental results on Transformer-base architectures.
+                            </p>
+<div class="mt-6 flex justify-end">
+<button class="font-label-caps text-label-caps border-2 border-on-background px-4 py-2 flex items-center gap-2 hover:bg-secondary-container transition-colors">
+                                    READ_FULL_LOG <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Paper 3 -->
+<div class="relative mb-12 group">
+<!-- Timeline Node -->
+<div class="absolute -left-[46px] md:-left-[54px] top-6 w-8 h-8 bg-on-secondary-fixed-variant border-4 border-on-background flex items-center justify-center rotate-45 transition-transform group-hover:rotate-0">
+<span class="material-symbols-outlined text-white text-sm -rotate-45 group-hover:rotate-0 transition-transform">terminal</span>
+</div>
+<article class="bg-surface border-4 border-on-background p-6 comic-panel-shadow transition-all hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_0px_rgba(147,75,25,1)]">
+<div class="flex flex-wrap justify-between items-start gap-4 mb-4">
+<div>
+<span class="font-label-caps text-label-caps bg-secondary-fixed text-on-secondary-fixed px-2 py-1 mb-2 inline-block">AUGUST 2023</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">RUST_FOR_REAL_TIME_KERNEL_SYSTEMS</h2>
+<p class="font-body-sm text-body-sm text-primary font-bold mt-1">DEV_LOGS_QUARTERLY</p>
+</div>
+<div class="flex gap-2">
+<div class="px-2 py-1 border-2 border-on-background font-label-caps text-label-caps bg-surface-container-highest">SYSTEMS</div>
+<div class="px-2 py-1 border-2 border-on-background font-label-caps text-label-caps bg-surface-container-highest">RUST</div>
+</div>
+</div>
+<hr class="border-t-2 border-on-background mb-4"/>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                                Abstract: A deep dive into memory safety guarantees vs. raw execution speed. This paper bench-marks the cost of the borrow-checker in micro-kernel architectures and introduces a "Fast-Path" crate for safe-but-rapid context switching in x86 environments.
+                            </p>
+<div class="mt-6 flex justify-end">
+<button class="font-label-caps text-label-caps border-2 border-on-background px-4 py-2 flex items-center gap-2 hover:bg-secondary-container transition-colors">
+                                    READ_FULL_LOG <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</article>
+</div>
+</div>
+<!-- Footer Section in Canvas -->
+<div class="mt-12 bg-on-background text-secondary-fixed p-8 border-4 border-on-background relative overflow-hidden">
+<div class="absolute right-0 top-0 halftone-bg w-1/3 h-full opacity-20 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+<div>
+<h3 class="font-display-lg text-display-lg-mobile text-secondary-fixed">COLLABORATE?</h3>
+<p class="font-body-sm text-body-sm mt-2">Open for research partnerships in distributed architecture.</p>
+</div>
+<button class="bg-secondary-container text-on-secondary-container border-2 border-on-background px-8 py-4 font-label-caps text-label-caps comic-panel-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all">
+                            SEND_ENCRYPTED_MESSAGE
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer Shell -->
+<footer class="w-full py-base-unit px-gutter flex flex-col md:flex-row justify-between items-center gap-4 bg-on-background text-secondary-fixed border-t-4 border-on-background z-50 relative">
+<div class="font-display-lg text-display-lg text-secondary-fixed leading-none">DEVNINJA</div>
+<div class="font-label-caps text-label-caps">© 2024 DEVNINJA_SYS. ALL RIGHTS RESERVED.</div>
+<div class="flex gap-6">
+<a class="font-label-caps text-label-caps text-secondary-fixed hover:text-primary-fixed transition-colors" href="#">GITHUB</a>
+<a class="font-label-caps text-label-caps text-secondary-fixed hover:text-primary-fixed transition-colors" href="#">LINKEDIN</a>
+<a class="font-label-caps text-label-caps text-secondary-fixed hover:text-primary-fixed transition-colors" href="#">X_COMMS</a>
+<a class="font-label-caps text-label-caps text-secondary-fixed hover:text-primary-fixed transition-colors" href="#">EMAIL</a>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Subtle rotation on nodes when scrolling
+        window.addEventListener('scroll', () => {
+            const nodes = document.querySelectorAll('.rotate-45');
+            const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+            nodes.forEach((node, index) => {
+                const baseRotate = 45 + (scrollPercent * 90);
+                node.style.transform = `rotate(${baseRotate}deg)`;
+            });
+        });
+
+        // Hover lift effect for panels
+        const articles = document.querySelectorAll('article');
+        articles.forEach(article => {
+            article.addEventListener('mouseenter', () => {
+                article.classList.add('translate-x-[-4px]', 'translate-y-[-4px]');
+            });
+            article.addEventListener('mouseleave', () => {
+                article.classList.remove('translate-x-[-4px]', 'translate-y-[-4px]');
+            });
+        });
+    </script>
+</body></html>
