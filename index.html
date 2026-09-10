@@ -1,297 +1,847 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Shahe — CS graduate researcher in multimedia streaming at Concordia. Building things that matter." />
-  <title>Shahe's portfolio</title>
+<!doctype html>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Sora:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="css/tokens.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/main.css" />
-</head>
-<body>
-
-  <!-- NAV -->
-  <nav class="nav">
-    <span class="nav__mark">shahe.dev</span>
-    <ul class="nav__links">
-      <li><a href="#research">Research</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-
-  <!-- HERO -->
-  <section class="section section--hero" id="hero">
-    <div class="wrap">
-      <p class="section__eyebrow">MSc Computer Science &nbsp;·&nbsp; Concordia</p>
-      <h1 class="hero__name">
-        Shahe Bannis<br />
-        <!-- I build <span>careful</span> software. -->
-      </h1>
-      <p class="hero__bio">
-        Master's student, part-time researcher, full-time tinkerer. 
-        My thesis is in low latency volumetric multimedia streaming, 
-        but I spend a lot of time building things outside of it too. 
-        Looking for roles where research and engineering overlap.
-      </p>
-      <!-- <p class="hero__bio">
-        I also enjoy competitions, having participated in several over the years. From Capture-The-Flag cybersecurity competitions to more general hackathons.
-      </p> -->
-      <!-- <p class="hero__bio">
-        Graduate researcher working at the intersection of [area A] and [area B].
-        My thesis explores how [one honest sentence about what you're actually doing].
-      </p>
-      <p class="hero__bio">
-        I care about writing code that's readable first and clever second —
-        and about understanding the systems I build, not just shipping them.
-      </p> -->
-      <div class="hero__cta">
-        <a href="#projects" class="btn btn--solid">See my work</a>
-        <a href="https://github.com/shahebannis" target="_blank" rel="noopener" class="btn btn--outline">GitHub ↗</a>
-        <!-- <a href="resume.pdf" class="btn btn--outline">Résumé ↗</a> -->
-      </div>
-    </div>
-  </section>
-
-
-  <!-- RESEARCH -->
-  <section class="section" id="research">
-    <div class="wrap">
-      <p class="section__eyebrow">Research</p>
-      <div class="thesis">
-        <p class="thesis__label">MSc Thesis &nbsp;·&nbsp; Concordia &nbsp;·&nbsp; in progress</p>
-        <p class="thesis__title">
-          Low latency Volumetric Multimedia Streaming
-        </p>
-        <p class="thesis__desc">
-          I'm researching dynamic point cloud compression for immersive 3D media, focussing on the effect of compression on the perceived quality of the final output. 
-          The project evaluates the codec's outputs using both objective metrics and subjective user studies. 
-          Its goal is to build a fair evaluation framework for understanding how to optimize point cloud video for real-time streaming.
-        </p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- PROJECTS -->
-  <section class="section" id="projects">
-    <div class="wrap">
-      <p class="section__eyebrow">Projects</p>
-
-      <div class="projects">
-
-        <a href="https://github.com/Org0220/Phishing-Detector" target="_blank" rel="noopener" class="project">
-          <div class="project__left">
-            <p class="project__name">Phishing Detector - Won 1st Place JacHacks cybersecurity track</p>
-            <p class="project__desc">
-              Built for John-Abbott's Hackathon competition. <br> WebApp using a custom-built and trained machine learning model to analyze emails and identify potential phishing attempts. Includes a "training mode" for training people to better recognize phishing emails.
-            </p>
-            <div class="project__tags">
-              <span class="tag">Python</span>
-              <span class="tag">PyTorch</span>
-              <span class="tag">PHP</span>
-              <span class="tag">Machine Learning</span>
+<html class="scroll-smooth" lang="en" style="">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Shahe's site</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Montserrat:wght@800;900&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            "surface-container-high": "#e9e9dd",
+                            "on-surface-variant": "#584238",
+                            "on-secondary-fixed-variant": "#753401",
+                            "secondary-fixed": "#ffdbc9",
+                            "on-primary-fixed-variant": "#7a3000",
+                            "primary-container": "#c45100",
+                            "on-primary-container": "#fffbff",
+                            outline: "#8c7166",
+                            "on-background": "#1b1c15",
+                            secondary: "#934b19",
+                            "surface-bright": "#fbfaee",
+                            "error-container": "#ffdad6",
+                            "inverse-primary": "#ffb693",
+                            "secondary-fixed-dim": "#ffb68c",
+                            "on-surface": "#1b1c15",
+                            "on-primary-fixed": "#351000",
+                            "surface-container-lowest": "#ffffff",
+                            surface: "#fbfaee",
+                            "tertiary-container": "#bc5540",
+                            "tertiary-fixed-dim": "#ffb4a5",
+                            primary: "#9c3f00",
+                            "surface-container-highest": "#e4e3d7",
+                            "on-tertiary-fixed-variant": "#802918",
+                            "on-tertiary": "#ffffff",
+                            "secondary-container": "#ffa26a",
+                            "tertiary-fixed": "#ffdad3",
+                            "surface-container": "#efeee3",
+                            "on-error-container": "#93000a",
+                            "on-secondary-fixed": "#321200",
+                            "on-tertiary-container": "#fffbff",
+                            "inverse-surface": "#303129",
+                            "surface-variant": "#e4e3d7",
+                            "surface-container-low": "#f5f4e8",
+                            "surface-dim": "#dbdbcf",
+                            "on-tertiary-fixed": "#3e0500",
+                            "on-error": "#ffffff",
+                            "outline-variant": "#e0c0b2",
+                            background: "#fbfaee",
+                            "surface-tint": "#a04100",
+                            tertiary: "#9c3e2b",
+                            "on-secondary": "#ffffff",
+                            "primary-fixed": "#ffdbcc",
+                            "on-primary": "#ffffff",
+                            "on-secondary-container": "#783603",
+                            "inverse-on-surface": "#f2f1e5",
+                            "primary-fixed-dim": "#ffb693",
+                            error: "#ba1a1a",
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.125rem",
+                            lg: "0.25rem",
+                            xl: "0.5rem",
+                            full: "0.75rem",
+                        },
+                        spacing: {
+                            "container-max": "1200px",
+                            "panel-margin": "32px",
+                            gutter: "24px",
+                            "base-unit": "8px",
+                        },
+                        fontFamily: {
+                            "body-lg": ["JetBrains Mono"],
+                            "headline-md": ["Montserrat"],
+                            "display-lg-mobile": ["Montserrat"],
+                            "label-caps": ["JetBrains Mono"],
+                            "body-sm": ["JetBrains Mono"],
+                            "display-lg": ["Montserrat"],
+                        },
+                        fontSize: {
+                            "body-lg": [
+                                "18px",
+                                { lineHeight: "1.6", fontWeight: "400" },
+                            ],
+                            "headline-md": [
+                                "24px",
+                                { lineHeight: "1.3", fontWeight: "800" },
+                            ],
+                            "display-lg-mobile": [
+                                "32px",
+                                { lineHeight: "1.2", fontWeight: "900" },
+                            ],
+                            "label-caps": [
+                                "12px",
+                                {
+                                    lineHeight: "1",
+                                    letterSpacing: "0.05em",
+                                    fontWeight: "700",
+                                },
+                            ],
+                            "body-sm": [
+                                "14px",
+                                { lineHeight: "1.5", fontWeight: "400" },
+                            ],
+                            "display-lg": [
+                                "48px",
+                                {
+                                    lineHeight: "1.1",
+                                    letterSpacing: "-0.02em",
+                                    fontWeight: "900",
+                                },
+                            ],
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .dot-grid {
+                background-image: radial-gradient(
+                    circle,
+                    #8c7166 1px,
+                    transparent 1px
+                );
+                background-size: 24px 24px;
+                opacity: 0.15;
+            }
+            .comic-border {
+                border: 4px solid #1b1c15;
+            }
+            .comic-border-sm {
+                border: 2px solid #1b1c15;
+            }
+            .hard-shadow {
+                box-shadow: 6px 6px 0px 0px #584238;
+            }
+            /* Unified Tactile Interaction Pattern */
+            .tactile-press {
+                transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .tactile-press:hover {
+                transform: translate(-2px, -2px);
+                box-shadow: 8px 8px 0px 0px #584238;
+            }
+            .tactile-press:active {
+                transform: translate(4px, 4px);
+                box-shadow: 0px 0px 0px 0px #584238;
+            }
+        </style>
+    </head>
+    <body class="bg-background text-on-surface font-body-lg">
+        <!-- TopNavBar -->
+        <nav
+            class="sticky top-0 z-50 flex justify-between items-center px-8 py-4 bg-surface border-b-4 border-on-surface shadow-[4px_4px_0px_0px_rgba(88,66,56,1)]"
+        >
+            <div
+                class="font-headline-md text-headline-md text-primary uppercase tracking-tighter"
+            >
+                Warehouse
             </div>
-          </div>
-          <span class="project__arrow">↗</span>
-        </a>
-
-        <a href="https://github.com/thiomajid/SyncBit-Desktop" target="_blank" rel="noopener" class="project">
-          <div class="project__left">
-            <p class="project__name">SyncBit Desktop</p>
-            <p class="project__desc">
-               A decentralized watch-party application that enables synchronized Video-on-Demand and streaming, optimized for low bandwidth scenarios.
-            </p>
-            <div class="project__tags">
-              <span class="tag">Go</span>
-              <span class="tag">Distributed Systems</span>
-              <span class="tag">wireless networks</span>
+            <div class="hidden md:flex gap-8 items-center">
+                <a
+                    class="text-primary font-bold underline decoration-4 underline-offset-4 font-body-lg text-body-lg"
+                    href="#home"
+                    >Home</a
+                >
+                <a
+                    class="text-on-surface-variant transition-all font-body-lg text-body-lg hover:text-primary"
+                    href="#projects"
+                    >Projects</a
+                >
+                <!-- <a -->
+                <!--     class="text-on-surface-variant transition-all font-body-lg text-body-lg hover:text-primary" -->
+                <!--     href="#research" -->
+                <!--     >Research</a -->
+                <!-- > -->
+                <a
+                    class="text-on-surface-variant transition-all font-body-lg text-body-lg hover:text-primary"
+                    href="#contact"
+                    >Contact</a
+                >
+                <button
+                    class="bg-primary text-on-primary px-6 py-2 comic-border-sm hard-shadow tactile-press font-bold"
+                >
+                    Resume
+                </button>
             </div>
-          </div>
-          <span class="project__arrow">↗</span>
-        </a>
-
-        <a href="https://github.com/shahebannis/GeometricModellingFinal" target="_blank" rel="noopener" class="project">
-          <div class="project__left">
-            <p class="project__name">Geometric Modelling Final Project</p>
-            <p class="project__desc">
-              Applies geometric preprocessing techniques then compresses dynamic point cloud data in order to analyze and compare their effects on different compression techniques. Includes a custom implementation of MLS (Moving Least Squares) smoothing, geometric normalization and voxel/radius based density normalization.
-            </p>
-            <div class="project__tags">
-              <span class="tag">Python</span>
-              <span class="tag">Docker</span>
+            <div class="md:hidden">
+                <span class="material-symbols-outlined text-4xl">menu</span>
             </div>
-          </div>
-          <span class="project__arrow">↗</span>
-        </a>
+        </nav>
+        <main class="relative">
+            <!-- Hero Section -->
+            <section
+                class="relative min-h-[70vh] flex items-center px-8 py-20 overflow-hidden"
+                id="home"
+            >
+                <div class="absolute inset-0 dot-grid -z-10"></div>
+                <div class="max-w-4xl mx-auto">
+                    <div
+                        class="comic-border bg-surface-bright p-8 md:p-12 hard-shadow rotate-[-1deg]"
+                    >
+                        <h1
+                            class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-none"
+                        >
+                            Shahe | <span class="text-primary">Student Researcher<span>
+                        </h1>
+                        <p
+                            class="font-body-lg text-body-lg mb-8 max-w-2xl text-on-surface-variant"
+                        >
+                            I'm a Computer Science master's student currently under the supervision of <a class="text-primary" href="https://scholar.google.com/citations?user=rRq6FiAAAAAJ&hl=en">Dr. Abdhelak Bentaleb.</a> <!-- focused on building -->
+                            My current research focuses on immersive volumetric low-latency multimedia streaming. <!--the effect of compression on the perceived quality of immersive 3D media.--> While
+                            my research specializes in multimedia networks, I often find myself tinkering with a number of emerging technologies
+                            within fields of interest such as embedded systems and Machine Learning / AI.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a
+                                class="bg-secondary text-on-secondary px-8 py-4 comic-border hard-shadow tactile-press font-bold uppercase tracking-widest text-label-caps inline-block"
+                                href="#projects"
+                                >View My Work</a
+                            >
+                            <a
+                                class="bg-surface-container-high text-on-surface-variant px-8 py-4 comic-border hard-shadow tactile-press font-bold uppercase tracking-widest text-label-caps inline-block"
+                                href="#contact"
+                                >Get In Touch</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Projects Section -->
+            <section class="py-24 px-8 bg-surface-container-low" id="projects">
+                <div class="max-w-container-max mx-auto">
+                    <div class="flex items-center gap-4 mb-16">
+                        <h2
+                            class="font-display-lg text-display-lg-mobile md:text-headline-md uppercase bg-primary text-on-primary px-4 py-2 comic-border rotate-[1deg]"
+                        >
+                            Key Projects
+                        </h2>
+                        <div class="flex-grow h-1 bg-on-surface"></div>
+                    </div>
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
+                    >
+                        <!-- VPCC project -->
+                        <div
+                            class="flex flex-col comic-border bg-surface p-0 hard-shadow group"
+                        >
+                            <div
+                                class="h-48 w-full border-b-4 border-on-surface overflow-hidden"
+                            >
+                                <img
+                                    class="w-full h-full object-cover"
+                                    data-alt="A clean, minimalist UI dashboard for a productivity application featuring soft orange accents, bold black borders, and rounded rectangles."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0RJCtvcm_9KuD7jTFChXY9Njyj676jwvZKqvm53JWa4VOlZntY5zxpxF4DMaaV4JIfeKSumf4M20GHWnMeELX25Y2EnF-z2nC6ypuUuFa5qJZA86uRcy_-LCyAnYlYmIumkK5DBdQ15SlLsGXUeBjC_cVYup--5y8cD-QuJAIL5Uj7DPJrOitinUuSxkvavXTjIqzWK1Imf-cNaSQohUz6z97I1-5uOUOWgfqO7Eu9R4mD4e6r3_J"
+                                />
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="font-headline-md text-headline-md mb-3 text-on-surface"
+                                >
+                                    V3CTK-metric & VirtualPCCamera
+                                </h3>
+                                <p
+                                    class="font-body-sm text-body-sm text-on-surface-variant mb-6"
+                                >
+                                    A metric collection system for volumetric media.
+                                    It is used to measure the effect of compression on
+                                    the perceived quality of immersive 3D media.
+                                    It collects both 2D and 3D objective metrics in order to analyze
+                                    different quality combination.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span
+                                        class="px-2 py-1 bg-surface-variant comic-border-sm text-label-caps font-bold"
+                                        >Python</span
+                                    >
+                                    <span
+                                        class="px-2 py-1 bg-surface-variant comic-border-sm text-label-caps font-bold"
+                                        >V-PCC</span
+                                    >
+                                    <span
+                                        class="px-2 py-1 bg-surface-variant comic-border-sm text-label-caps font-bold"
+                                        >Docker</span
+                                    >
+                                </div>
+                                <a
+                                    class="inline-flex items-center gap-2 font-bold text-primary tactile-press comic-border-sm px-3 py-2 bg-surface-container-low"
+                                >
+                                    Paper Underway
+                                    <span
+                                        class="material-symbols-outlined text-sm"
+                                        >arrow_forward</span
+                                    >
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Syncbit -->
+                        <div
+                            class="flex flex-col comic-border bg-surface p-0 hard-shadow group lg:mt-8"
+                        >
+                            <div
+                                class="h-48 w-full border-b-4 border-on-surface overflow-hidden"
+                            >
+                                <img
+                                    class="w-full h-full object-cover"
+                                    data-alt="A sophisticated data visualization map showing global network nodes connected by glowing orange lines."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfM6QhqD0Ywwq-k9rhHWuwOMkVl5cZRoVglvY-kVCUCg4W6eHMIQDV8484pqKskysPUuEFnsJnExNOEQUPtS3qmgqDD3myjDr2JHaewSZ6x3PJYricfZlOCdX-ACyruD61pcxXRyCLEXVHnHm1tifap-u5e19VhpHJSQ6W6wedPD1jl4CYsU27c9C1CcH6hrL93SsaPIjOGdKjSyZVMznsb5phYt1eDqbLQ6Ce72cz67wjvbESI9g_"
+                                />
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="font-headline-md text-headline-md mb-3 text-on-surface"
+                                >
+                                    Syncbit
+                                </h3>
+                                <p
+                                    class="font-body-sm text-body-sm text-on-surface-variant mb-6"
+                                >
+                                    A decentralized watch-party application that enables
+                                    synchronized Video-on-Demand and streaming, optimized
+                                    for low-bandwidth scenarios.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span
+                                        class="px-2 py-1 bg-surface-variant comic-border-sm text-label-caps font-bold"
+                                        >Go</span
+                                    >
+                                    <span
+                                        class="px-2 py-1 bg-surface-variant comic-border-sm text-label-caps font-bold"
+                                        >Distributed Networks</span
+                                    >
+                                    <span
+                                        class="px-2 py-1 bg-surface-variant comic-border-sm text-label-caps font-bold"
+                                        >Wireless Networks</span
+                                    >
+                                </div>
+                                <a
+                                    class="inline-flex items-center gap-2 font-bold text-primary tactile-press comic-border-sm px-3 py-2 bg-surface-container-low"
+                                    href="#"
+                                >
+                                    View Details
+                                    <span
+                                        class="material-symbols-outlined text-sm"
+                                        >arrow_forward</span
+                                    >
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Geometric modelling final proj -->
+                        <div
+                            class="flex flex-col comic-border bg-surface p-0 hard-shadow group"
+                        >
+                            <div
+                                class="h-48 w-full border-b-4 border-on-surface overflow-hidden"
+                            >
+                                <img
+                                    class="w-full h-full object-cover"
+                                    data-alt="A vibrant mobile app interface displaying a personal finance tracker with bold geometric charts."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7ngCmIfTggSO__QoyYmvkMeco80_aWdD9R-rTFj4Hm6k05rCObdu5VTB2rKUUJvdR08MYuanTZ5gI-6Ee5-y-NLJebKi-HsTPWx197m-tzgV40Zmj6_gOG2TtqKEreIY2B7qKLC2kTosQj7aS8X_JRuMvbSJqB4kA7J_ro44NHESXOmlqikstxP4WCMl4cEmPrfz9Q8S88HLIfuoLTyGGl_DL_Heqa-qEhJEPJ93nMirBd7JMGDP8"
+                                />
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="font-headline-md text-headline-md mb-3 text-on-surface"
+                                >
+                                    Pointcloud Preprocessing Platform
+                                </h3>
+                                <p
+                                    class="font-body-sm text-body-sm text-on-surface-variant mb-6"
+                                >
+                                    An online platform to investigate how normalization, resampling and MLS smoothing of pointcloud geometry affects rate-distortion across different codecs (Draco, G-PCC). <br>
+                                    It has a first-principles implementation of <b>normalization</b>, <b>MLS smoothing</b> and <b>resampling of the points</b> (using either voxels or poisson)
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span
+                                        class="px-2 py-1 bg-surface-variant comic-border-sm text-label-caps font-bold"
+                                        >Python</span
+                                    >
+                                    <span
+                                        class="px-2 py-1 bg-surface-variant comic-border-sm text-label-caps font-bold"
+                                        >docker</span
+                                    >
+                                    <span
+                                        class="px-2 py-1 bg-surface-variant comic-border-sm text-label-caps font-bold"
+                                        >HTML</span
+                                    >
 
-        <a href="https://github.com/shahebannis/RUNA" target="_blank" rel="noopener" class="project">
-          <div class="project__left">
-            <p class="project__name">RUNA</p>
-            <p class="project__desc">
-              RUNA is an AI assistant inspired by Jarvis from Iron Man. 
-              Hosted on a local server, it manages my tasks, files and home server, and is slowly being 
-              integrated with other personal projects as a sort of "AI swiss army knife" for my personal use. 
-            </p>
-            <div class="project__tags">
-              <span class="tag">Python</span>
-              <span class="tag">self-hosting</span>
-              <span class="tag">sysadmin</span>
-              <span class="tag">automation</span>
+                                </div>
+                                <a
+                                    class="inline-flex items-center gap-2 font-bold text-primary tactile-press comic-border-sm px-3 py-2 bg-surface-container-low"
+                                    href="https://github.com/shahebannis/GeometricModellingFinal"
+                                >
+                                    Github Repo
+                                    <span
+                                        class="material-symbols-outlined text-sm"
+                                        >code</span
+                                    >
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Phishing Detector -->
+                        <div
+                            class="hidden flex-col comic-border bg-surface p-0 hard-shadow group"
+                            data-extra-project
+                        >
+                            <div
+                                class="h-48 w-full border-b-4 border-on-surface overflow-hidden"
+                            >
+                                <img
+                                    class="w-full h-full object-cover"
+                                    data-alt="A cybersecurity dashboard showing suspicious email alerts and warning indicators."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfM6QhqD0Ywwq-k9rhHWuwOMkVl5cZRoVglvY-kVCUCg4W6eHMIQDV8484pqKskysPUuEFnsJnExNOEQUPtS3qmgqDD3myjDr2JHaewSZ6x3PJYricfZlOCdX-ACyruD61pcxXRyCLEXVHnHm1tifap-u5e19VhpHJSQ6W6wedPD1jl4CYsU27c9C1CcH6hrL93SsaPIjOGdKjSyZVMznsb5phYt1eDqbLQ6Ce72cz67wjvbESI9g_"
+                                />
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="font-headline-md text-headline-md mb-3 text-on-surface"
+                                >
+                                    Phishing Detector
+                                </h3>
+                                <p
+                                    class="font-body-sm text-body-sm text-on-surface-variant mb-6"
+                                >
+                                    A lightweight tool that flags suspicious emails by checking links, sender patterns, and message content for common phishing signals.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span
+                                        class="px-2 py-1 bg-surface-variant comic-border-sm text-label-caps font-bold"
+                                        >Python</span
+                                    >
+                                    <span
+                                        class="px-2 py-1 bg-surface-variant comic-border-sm text-label-caps font-bold"
+                                        >Security</span
+                                    >
+                                    <span
+                                        class="px-2 py-1 bg-surface-variant comic-border-sm text-label-caps font-bold"
+                                        >ML</span
+                                    >
+                                </div>
+                                <a
+                                    class="inline-flex items-center gap-2 font-bold text-primary tactile-press comic-border-sm px-3 py-2 bg-surface-container-low"
+                                    href="#"
+                                >
+                                    View Details
+                                    <span
+                                        class="material-symbols-outlined text-sm"
+                                        >arrow_forward</span
+                                    >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center gap-4 mt-12">
+                        <button
+                            class="bg-secondary text-on-secondary px-8 py-4 comic-border hard-shadow tactile-press font-bold uppercase tracking-widest text-label-caps inline-block"
+                            data-projects-show-more
+                            type="button"
+                            >View More Projects</button
+                        >
+                        <button
+                            class="hidden bg-secondary text-on-secondary px-8 py-4 comic-border hard-shadow tactile-press font-bold uppercase tracking-widest text-label-caps inline-block"
+                            data-projects-show-less
+                            type="button"
+                            >Show Less Projects</button
+                        >
+                        <a
+                            class="hidden bg-secondary text-on-secondary w-14 h-14 comic-border hard-shadow tactile-press font-bold uppercase tracking-widest text-label-caps items-center justify-center"
+                            data-projects-github
+                            href="https://github.com/shahebannis"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                        >
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.16c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18.92-.26 1.9-.38 2.88-.39.98.01 1.96.13 2.88.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.66.42.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- Research Section -->
+            <!-- <section class="py-24 px-8 bg-surface" id="research"> -->
+            <!--     <div class="max-w-4xl mx-auto"> -->
+            <!--         <div class="flex items-center gap-4 mb-16 justify-end"> -->
+            <!--             <div class="flex-grow h-1 bg-on-surface"></div> -->
+            <!--             <h2 -->
+            <!--                 class="font-display-lg text-display-lg-mobile md:text-headline-md uppercase bg-tertiary text-on-tertiary px-4 py-2 comic-border rotate-[-1deg]" -->
+            <!--             > -->
+            <!--                 Academic Research -->
+            <!--             </h2> -->
+            <!--         </div> -->
+            <!--         <div class="space-y-12"> -->
+                        <!-- currently empty -->
+                        <!-- Paper 1 -->
+            <!--             <div -->
+            <!--                 class="relative pl-12 border-l-4 border-on-surface" -->
+            <!--             > -->
+            <!--                 <div -->
+            <!--                     class="absolute -left-[14px] top-0 w-6 h-6 bg-primary comic-border-sm" -->
+            <!--                 ></div> -->
+            <!--                 <div -->
+            <!--                     class="comic-border p-6 bg-surface-container hover:bg-white transition-colors" -->
+            <!--                 > -->
+            <!--                     <span -->
+            <!--                         class="font-label-caps text-label-caps text-primary block mb-2" -->
+            <!--                         >OCTOBER 2023</span -->
+            <!--                     > -->
+            <!--                     <h3 -->
+            <!--                         class="font-headline-md text-headline-md mb-4" -->
+            <!--                     > -->
+            <!--                         Scalability in Decentralized Ledgers -->
+            <!--                     </h3> -->
+            <!--                     <p -->
+            <!--                         class="font-body-sm text-body-sm text-on-surface-variant mb-4" -->
+            <!--                     > -->
+            <!--                         An exploration of sharding techniques and -->
+            <!--                         their impact on transaction throughput in -->
+            <!--                         distributed ledger technologies. -->
+            <!--                     </p> -->
+            <!--                     <div -->
+            <!--                         class="text-sm font-bold text-on-surface italic mb-4" -->
+            <!--                     > -->
+            <!--                         Advisor: Dr. Helena Vance -->
+            <!--                     </div> -->
+            <!--                     <a -->
+            <!--                         class="inline-flex items-center gap-2 font-bold text-primary tactile-press comic-border-sm px-4 py-2 bg-white" -->
+            <!--                         href="#" -->
+            <!--                     > -->
+            <!--                         View Paper -->
+            <!--                         <span -->
+            <!--                             class="material-symbols-outlined text-sm" -->
+            <!--                             >arrow_forward</span -->
+            <!--                         > -->
+            <!--                     </a> -->
+            <!--                 </div> -->
+            <!--             </div> -->
+                        <!-- Paper 2 -->
+            <!--             <div -->
+            <!--                 class="relative pl-12 border-l-4 border-on-surface" -->
+            <!--             > -->
+            <!--                 <div -->
+            <!--                     class="absolute -left-[14px] top-0 w-6 h-6 bg-secondary comic-border-sm" -->
+            <!--                 ></div> -->
+            <!--                 <div -->
+            <!--                     class="comic-border p-6 bg-surface-container hover:bg-white transition-colors" -->
+            <!--                 > -->
+            <!--                     <span -->
+            <!--                         class="font-label-caps text-label-caps text-primary block mb-2" -->
+            <!--                         >MAY 2023</span -->
+            <!--                     > -->
+            <!--                     <h3 -->
+            <!--                         class="font-headline-md text-headline-md mb-4" -->
+            <!--                     > -->
+            <!--                         Adaptive UI Patterns for Accessibility -->
+            <!--                     </h3> -->
+            <!--                     <p -->
+            <!--                         class="font-body-sm text-body-sm text-on-surface-variant mb-4" -->
+            <!--                     > -->
+            <!--                         Research into generative UI systems that -->
+            <!--                         adjust color contrast and sizing based on -->
+            <!--                         real-time environmental lighting data. -->
+            <!--                     </p> -->
+            <!--                     <div -->
+            <!--                         class="text-sm font-bold text-on-surface italic mb-4" -->
+            <!--                     > -->
+            <!--                         Independent Study -->
+            <!--                     </div> -->
+            <!--                     <a -->
+            <!--                         class="inline-flex items-center gap-2 font-bold text-primary tactile-press comic-border-sm px-4 py-2 bg-white" -->
+            <!--                         href="#" -->
+            <!--                     > -->
+            <!--                         View Paper -->
+            <!--                         <span -->
+            <!--                             class="material-symbols-outlined text-sm" -->
+            <!--                             >arrow_forward</span -->
+            <!--                         > -->
+            <!--                     </a> -->
+            <!--                 </div> -->
+            <!--             </div> -->
+            <!--         </div> -->
+            <!--     </div> -->
+            <!-- </section> -->
+
+            <!-- About Me & Skills -->
+            <!-- <section class="py-24 px-8 bg-surface-container-highest" id="about"> -->
+            <!--     <div -->
+            <!--         class="max-w-container-max mx-auto grid grid-cols-1 gap-16 items-center max-w-4xl" -->
+            <!--     > -->
+            <!--         <div -->
+            <!--             class="comic-border bg-surface p-8 hard-shadow relative" -->
+            <!--         > -->
+            <!--             <div -->
+            <!--                 class="absolute -top-4 -left-4 bg-on-surface text-white px-4 py-2 font-label-caps text-label-caps" -->
+            <!--             > -->
+            <!--                 WHO_AM_I -->
+            <!--             </div> -->
+            <!--             <h2 class="font-display-lg text-display-lg-mobile mb-6"> -->
+            <!--                 BEYOND THE CODE -->
+            <!--             </h2> -->
+            <!--             <p -->
+            <!--                 class="font-body-lg text-body-lg mb-6 text-on-surface-variant" -->
+            <!--             > -->
+            <!--                 I'm currently pursuing my Master's in Computer -->
+            <!--                 Science at Concordia University. I believe -->
+            <!--                 that software should be as delightful to use as it -->
+            <!--                 is powerful to execute. -->
+            <!--             </p> -->
+            <!--             <p -->
+            <!--                 class="font-body-lg text-body-lg text-on-surface-variant" -->
+            <!--             > -->
+            <!--                 When I'm not debugging or writing documentation, I'm -->
+            <!--                 usually sketching comic panels or exploring local -->
+            <!--                 coffee shops. I find that the best problem-solvers -->
+            <!--                 are those who can bridge the gap between technical -->
+            <!--                 constraints and human needs. -->
+            <!--             </p> -->
+            <!--         </div> -->
+            <!--     </div> -->
+            <!-- </section> -->
+            <!-- Contact Section -->
+            <section class="py-24 px-8 relative overflow-hidden" id="contact">
+                <div class="absolute inset-0 dot-grid -z-10"></div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="font-display-lg text-display-lg-mobile mb-4">
+                            LET'S CONNECT
+                        </h2>
+                    </div>
+                    <div
+                        class="grid gap-8 items-stretch"
+                    >
+                        <!-- Contact Form -->
+                        <!-- <div -->
+                        <!--     class="md:col-span-7 comic-border bg-surface p-8 hard-shadow" -->
+                        <!-- > -->
+                        <!--     <form class="space-y-6"> -->
+                        <!--         <div> -->
+                        <!--             <label -->
+                        <!--                 class="block font-label-caps text-label-caps mb-2 text-on-surface" -->
+                        <!--                 >Your Name</label -->
+                        <!--             > -->
+                        <!--             <input -->
+                        <!--                 class="w-full comic-border-sm bg-surface-container-low p-3 font-body-sm focus:ring-2 focus:ring-primary focus:outline-none" -->
+                        <!--                 placeholder="Jane Doe" -->
+                        <!--                 type="text" -->
+                        <!--             /> -->
+                        <!--         </div> -->
+                        <!--         <div> -->
+                        <!--             <label -->
+                        <!--                 class="block font-label-caps text-label-caps mb-2 text-on-surface" -->
+                        <!--                 >Email Address</label -->
+                        <!--             > -->
+                        <!--             <input -->
+                        <!--                 class="w-full comic-border-sm bg-surface-container-low p-3 font-body-sm focus:ring-2 focus:ring-primary focus:outline-none" -->
+                        <!--                 placeholder="jane@example.com" -->
+                        <!--                 type="email" -->
+                        <!--             /> -->
+                        <!--         </div> -->
+                        <!--         <div> -->
+                        <!--             <label -->
+                        <!--                 class="block font-label-caps text-label-caps mb-2 text-on-surface" -->
+                        <!--                 >Message</label -->
+                        <!--             > -->
+                        <!--             <textarea -->
+                        <!--                 class="w-full comic-border-sm bg-surface-container-low p-3 font-body-sm focus:ring-2 focus:ring-primary focus:outline-none" -->
+                        <!--                 placeholder="How can I help you?" -->
+                        <!--                 rows="4" -->
+                        <!--             ></textarea> -->
+                        <!--         </div> -->
+                        <!--         <button -->
+                        <!--             class="w-full bg-primary text-on-primary py-4 font-headline-md comic-border hard-shadow tactile-press uppercase" -->
+                        <!--         > -->
+                        <!--             Send Message -->
+                        <!--         </button> -->
+                        <!--     </form> -->
+                        <!-- </div> -->
+                        <!-- Socials -->
+                        <div class="grid grid-cols-2 gap-6">
+                            <a
+                                class="flex items-center gap-4 p-6 comic-border bg-surface-container-highest hard-shadow tactile-press"
+                                href="https://github.com/shahebannis"
+                            >
+                                <span class="material-symbols-outlined text-4xl"
+                                    >code</span
+                                >
+                                <div>
+                                    <p
+                                        class="font-label-caps text-label-caps text-primary"
+                                    >
+                                        FOLLOW_ME
+                                    </p>
+                                    <p class="font-headline-md text-on-surface">
+                                        GitHub
+                                    </p>
+                                </div>
+                            </a>
+                            <a
+                                class="flex items-center gap-4 p-6 comic-border bg-[#e1f5fe] hard-shadow tactile-press"
+                                href="https://www.linkedin.com/in/shahe-bannis/"
+                            >
+                                <span class="material-symbols-outlined text-4xl"
+                                    >share</span
+                                >
+                                <div>
+                                    <p
+                                        class="font-label-caps text-label-caps text-on-secondary-container"
+                                    >
+                                        CONNECT
+                                    </p>
+                                    <p class="font-headline-md text-on-surface">
+                                        LinkedIn
+                                    </p>
+                                </div>
+                            </a>
+                            <!-- Scholar link when I get it-->
+                            <a
+                                class="flex items-center gap-4 p-6 comic-border bg-tertiary-fixed hard-shadow tactile-press"
+                                href="#"
+                            >
+                                <span class="material-symbols-outlined text-4xl"
+                                    >school</span
+                                >
+                                <div>
+                                    <p
+                                        class="font-label-caps text-label-caps text-on-tertiary-fixed-variant"
+                                    >
+                                        ACADEMIC
+                                    </p>
+                                    <p class="font-headline-md text-on-surface">
+                                        Google Scholar
+                                    </p>
+                                </div>
+                            </a>
+                            <a
+                                class="flex items-center gap-4 p-6 comic-border bg-surface-container-low hard-shadow tactile-press"
+                                href="mailto:alex@example.edu"
+                            >
+                                <span class="material-symbols-outlined text-4xl"
+                                    >mail</span
+                                >
+                                <div>
+                                    <p
+                                        class="font-label-caps text-label-caps text-primary"
+                                    >
+                                        SAY_HELLO
+                                    </p>
+                                    <p class="font-headline-md text-on-surface">
+                                        Email Me
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer
+            class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-surface-container-highest border-t-4 border-on-surface"
+        >
+            <div class="font-headline-md text-headline-md text-on-surface">
+                CS_STUDENT
             </div>
-          </div>
-          <span class="project__arrow">↗</span>
-        </a>
-        <!-- project template -->
-        <!-- <a href="https://github.com/yourusername/project-template" target="_blank" rel="noopener" class="project">
-          <div class="project__left">
-            <p class="project__name">Project Template</p>
-            <p class="project__desc">
-              A reusable template for creating new projects with consistent structure and styling.
-            </p>
-            <div class="project__tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
+            <div
+                class="font-label-caps text-label-caps text-on-surface-variant"
+            >
+                © 2026 CS_STUDENT // BUILT BY ME ;)
             </div>
-          </div>
-          <span class="project__arrow">↗</span>
-        </a> -->
-        <a href="https://github.com/shahebannis" target="_blank" rel="noopener" class="project">
-          <div class="project__left">
-            <p class="project__name">More on GitHub</p>
-            <p class="project__desc">
-              This is just a selection of my work. Check out my GitHub for more projects, including smaller ones and other contributions I have made.
-            </p>
-          </div>
-          <span class="project__arrow">↗</span>
-        </a>
-      </div>  
-    </div>
-  </section>
+            <div class="flex gap-8">
+                <a
+                    class="text-on-surface-variant font-label-caps hover:text-primary transition-colors uppercase"
+                    href="https://github.com/shahebannis" target="_blank" rel="noopener noreferrer"
+                    >GitHub</a
+                >
+                <a
+                    class="text-on-surface-variant font-label-caps hover:text-primary transition-colors uppercase"
+                    href="#"
+                    >LinkedIn</a
+                >
+            </div>
+        </footer>
+        <script>
+            // Simple Micro-interactions for smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    const target = document.querySelector(
+                        this.getAttribute("href"),
+                    );
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                        });
+                    }
+                });
+            });
 
+            const extraProjects = document.querySelectorAll("[data-extra-project]");
+            const showMoreProjects = document.querySelector("[data-projects-show-more]");
+            const showLessProjects = document.querySelector("[data-projects-show-less]");
+            const projectsGithub = document.querySelector("[data-projects-github]");
 
-  <!-- SKILLS -->
-  <section class="section" id="skills">
-    <div class="wrap">
-      <p class="section__eyebrow">Skills</p>
-      <div class="skills">
+            showMoreProjects.addEventListener("click", () => {
+                extraProjects.forEach((project) => {
+                    project.classList.remove("hidden");
+                    project.classList.add("flex");
+                });
+                showMoreProjects.classList.add("hidden");
+                showLessProjects.classList.remove("hidden");
+                projectsGithub.classList.remove("hidden");
+                projectsGithub.classList.add("flex");
+            });
 
-        <div class="skill-group">
-          <p class="skill-group__label">Languages</p>
-          <div class="skill-group__items">
-            <span class="tag">Python</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">C++</span>
-            <span class="tag">Rust</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Go</span>
-            <span class="tag">PHP</span>
-            <span class="tag">Bash</span>
-            <span class="tag">Java</span>
-            <span class="tag">C#</span>
-            <span class="tag">SQL</span>
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">... and more!</span>
-          </div>
-        </div>
+            showLessProjects.addEventListener("click", () => {
+                const controls = showLessProjects.parentElement;
+                const controlsTop = controls.getBoundingClientRect().top;
 
-        <div class="skill-group">
-          <p class="skill-group__label">Frameworks</p>
-          <div class="skill-group__items">
-            <span class="tag">PyTorch</span>
-            <span class="tag">TensorFlow</span>
-            <span class="tag">React</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Angular</span>
-            <span class="tag">Next.js</span>
-          </div>
-        </div>
+                extraProjects.forEach((project) => {
+                    project.classList.add("hidden");
+                    project.classList.remove("flex");
+                });
+                showMoreProjects.classList.remove("hidden");
+                showLessProjects.classList.add("hidden");
+                projectsGithub.classList.add("hidden");
+                projectsGithub.classList.remove("flex");
 
-        <div class="skill-group">
-          <p class="skill-group__label">Tools</p>
-          <div class="skill-group__items">
-            <span class="tag">Git</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Linux</span>
-            <span class="tag">Postgres</span>
-            <span class="tag">AWS</span>
-            <span class="tag">Heroku</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <p class="skill-group__label">Areas</p>
-          <div class="skill-group__items">
-            <span class="tag">ML systems</span>
-            <span class="tag">Algorithms</span>
-            <span class="tag">Networks</span>
-            <span class="tag">IoT</span>
-            <span class="tag">Volumetric Multimedia</span>
-            <span class="tag">Low-latency streaming</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="wrap">
-      <p class="section__eyebrow">Contact</p>
-
-      <div class="contact-list">
-        <a href="mailto:shahe.bannis+portfolio@gmail.com" class="contact-row">
-          <div class="contact-row__left">
-            <span class="contact-row__type">email</span>
-            <span class="contact-row__val">shahe.bannis@gmail.com</span>
-          </div>
-          <span class="contact-row__arrow">↗</span>
-        </a>
-        <a href="https://github.com/shahebannis" target="_blank" rel="noopener" class="contact-row">
-          <div class="contact-row__left">
-            <span class="contact-row__type">github</span>
-            <span class="contact-row__val">github.com/shahebannis</span>
-          </div>
-          <span class="contact-row__arrow">↗</span>
-        </a>
-        <a href="https://linkedin.com/in/shahe-bannis" target="_blank" rel="noopener" class="contact-row">
-          <div class="contact-row__left">
-            <span class="contact-row__type">linkedin</span>
-            <span class="contact-row__val">linkedin.com/in/shahe-bannis</span>
-          </div>
-          <span class="contact-row__arrow">↗</span>
-        </a>
-        <!-- <a href="resume.pdf" class="contact-row">
-          <div class="contact-row__left">
-            <span class="contact-row__type">résumé</span>
-            <span class="contact-row__val">Download PDF</span>
-          </div>
-          <span class="contact-row__arrow">↗</span>
-        </a> -->
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p class="footer__left">Shahe &nbsp;<span>·</span>&nbsp; 2025</p>
-    <p class="footer__right">Built by me</p>
-  </footer>
-
-  <script src="js/main.js"></script>
-</body>
+                const newControlsTop = controls.getBoundingClientRect().top;
+                window.scrollTo({
+                    top: window.scrollY + newControlsTop - controlsTop,
+                    behavior: "instant",
+                });
+            });
+        </script>
+    </body>
 </html>
