@@ -516,7 +516,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="flex justify-center gap-4 mt-12">
                         <button
                             class="bg-secondary text-on-secondary px-8 py-4 comic-border hard-shadow tactile-press font-bold uppercase tracking-widest text-label-caps inline-block"
@@ -780,7 +780,7 @@
                                 </div>
                             </a>
                             <!-- Scholar link when I get it-->
-                            <a
+                            <!--<a
                                 class="flex items-center gap-4 p-6 comic-border bg-tertiary-fixed hard-shadow tactile-press"
                                 href="#"
                             >
@@ -797,25 +797,25 @@
                                         Google Scholar
                                     </p>
                                 </div>
-                            </a>
-                            <a
-                                class="flex items-center gap-4 p-6 comic-border bg-surface-container-low hard-shadow tactile-press"
-                                href="mailto:shahe.bannis@gmail.com"
-                            >
-                                <span class="material-symbols-outlined text-4xl"
-                                    >mail</span
-                                >
+                            </a>-->
+                            <div class="col-span-2 flex items-center justify-between gap-4 p-6 comic-border bg-surface-container-low hard-shadow">
                                 <div>
                                     <p
                                         class="font-label-caps text-label-caps text-primary"
                                     >
-                                        SAY_HELLO
+                                        EMAIL
                                     </p>
-                                    <p class="font-headline-md text-on-surface">
-                                        Email Me
+                                    <p class="font-headline-md text-on-surface select-all">
+                                        shahe.bannis+portfolio@gmail.com
                                     </p>
                                 </div>
-                            </a>
+                                <button
+                                    class="bg-secondary text-on-secondary px-4 py-3 comic-border-sm tactile-press font-bold uppercase tracking-widest text-label-caps"
+                                    data-copy-email
+                                    type="button"
+                                    >Copy</button
+                                >
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -896,6 +896,16 @@
                     top: window.scrollY + newControlsTop - controlsTop,
                     behavior: "instant",
                 });
+            });
+
+            const copyEmail = document.querySelector("[data-copy-email]");
+
+            copyEmail.addEventListener("click", () => {
+                navigator.clipboard.writeText("shahe.bannis+portfolio@gmail.com");
+                copyEmail.textContent = "Copied";
+                setTimeout(() => {
+                    copyEmail.textContent = "Copy";
+                }, 1500);
             });
         </script>
     </body>
